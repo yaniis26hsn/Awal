@@ -21,7 +21,7 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/<your-username>/awal.git
+git clone https://github.com/yaniis26hsn/awal.git
 cd awal
 npm install
 cp .env.example .env.local   # add your Gemini API key
