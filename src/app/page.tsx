@@ -93,12 +93,15 @@ export default function Page() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-black">
       <header className="border-b border-solid border-gray-200 bg-white dark:bg-gray-900 dark:border-gray-700">
-        <div className="max-w-3xl mx-auto px-4 py-3">
-          <h1 className="text-lg font-semibold tracking-tight">Polish</h1>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-            Paste text. Get it fixed or improved. Copy. Done.
-          </p>
+        <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-2">
+          <span className="font-bold text-xl tracking-tight">AWAL</span>
+          <span className="text-xs font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wider">
+            polish
+          </span>
         </div>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mx-auto max-w-3xl px-4 mt-0.5">
+          Paste text. Get it fixed or improved. Copy. Done.
+        </p>
       </header>
 
       <main className="flex-1 max-w-3xl mx-auto px-4 py-6">
