@@ -24,7 +24,7 @@
 git clone https://github.com/<your-username>/awal.git
 cd awal
 npm install
-cp .env.example .env.local   # add your API key
+cp .env.example .env.local   # add your Gemini API key
 npm run dev
 ```
 
@@ -35,13 +35,13 @@ Open [http://localhost:3000](http://localhost:3000).
 Create `.env.local` with:
 
 ```
-ANTHROPIC_API_KEY=your_key_here
-MODEL_FAST=claude-haiku-5-5
-MODEL_QUALITY=claude-sonnet-5-5
+GEMINI_API_KEY=your_key_here
+MODEL_FAST=gemini-2.5-flash
+MODEL_QUALITY=gemini-2.5-pro
 MAX_INPUT_CHARS=5000
 ```
 
-Optional, for rate limiting in production:
+Optional, for rate limiting in production (swap the in-memory limiter for Upstash Redis):
 
 ```
 UPSTASH_REDIS_REST_URL=
@@ -59,22 +59,24 @@ UPSTASH_REDIS_REST_TOKEN=
 
 - [Next.js](https://nextjs.org/) (App Router) + TypeScript
 - [Tailwind CSS](https://tailwindcss.com/)
-- Claude API with streaming responses
+- **Google Gemini API** with streaming responses (replaces Anthropic/Claude)
 - [`diff`](https://github.com/kpdecker/jsdiff) for the change view
-- Zod for validation, Vitest and Playwright for tests
+- Zod for validation
 
 ## How It Works
 
-The browser sends the text, mode and tone to `POST /api/polish`. The server validates the request, applies rate limiting, calls the AI API with a mode-specific prompt, and streams the result back. The API key never reaches the client, and the diff is computed in the browser.
+The browser sends the text, mode and tone to `POST /api/polish`. The server validates the request, applies rate limiting, calls the **Gemini** API with a mode-specific prompt, and streams the result back. The API key never reaches the client, and the diff is computed in the browser.
 
 ## Project Structure
 
 ```
-app/            # pages and the /api/polish route
-components/     # UI components
-lib/            # prompts, models, schema, helpers
-hooks/          # usePolish, usePersistedState
-public/         # manifest and icons
+src/
+  app/            # pages and the /api/polish route
+  components/     # UI components
+  lib/            # prompts, models, schema, helpers (Gemini)
+  hooks/          # usePolish, usePersistedState
+  public/         # manifest and icons
+PROJECT.md        # product specification
 ```
 
 ## Roadmap
