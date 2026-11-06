@@ -1,7 +1,7 @@
 import type { Mode, Tone, ModeConfig } from "./schema";
 
-const FAST_MODEL = process.env.MODEL_FAST ?? "gemini-2.5-flash";
-const QUALITY_MODEL = process.env.MODEL_QUALITY ?? "gemini-2.5-pro";
+const FAST_MODEL = process.env.MODEL_FAST ?? "gemini-pro";
+const QUALITY_MODEL = process.env.MODEL_QUALITY ?? "gemini-pro";
 
 export const MODEL_CONFIGS: Record<Mode, ModeConfig> = {
   fix: {

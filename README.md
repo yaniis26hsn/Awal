@@ -36,8 +36,8 @@ Create `.env.local` with:
 
 ```
 GEMINI_API_KEY=your_key_here
-MODEL_FAST=gemini-2.5-flash
-MODEL_QUALITY=gemini-2.5-pro
+MODEL_FAST=gemini-pro
+MODEL_QUALITY=gemini-pro
 MAX_INPUT_CHARS=5000
 ```
 

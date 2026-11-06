@@ -33,8 +33,8 @@ export async function POST(request: Request) {
     }
 
     const { text, mode, tone } = parsed.data;
-    const modelName = process.env.MODEL_FAST ?? "gemini-2.5-flash";
-    const qualityModel = process.env.MODEL_QUALITY ?? "gemini-2.5-pro";
+    const modelName = process.env.MODEL_FAST ?? "gemini-pro";
+    const qualityModel = process.env.MODEL_QUALITY ?? "gemini-pro";
 
     // Choose model per mode (matching PROJECT.md section 5: fast for fix/improve, quality for rewrite)
     const model = genAI.getGenerativeModel({
