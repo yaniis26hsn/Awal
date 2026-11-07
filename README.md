@@ -6,6 +6,9 @@
 
 **Live demo:** _coming soon_
 
+## image of the product 
+![not need for an alternatif text](Screenshot_20261107091142.png)
+
 ## Features
 
 - **Fix errors** (default): corrects spelling, grammar and punctuation only, keeping your wording and voice
